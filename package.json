@@ -3,6 +3,14 @@
   "version": "1.0.1",
   "description": "A Node-RED output node for Incident.MOOG",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moog-stephen/node-red-contrib-moog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moog-stephen/node-red-contrib-moog/issues"
+  },
+  "homepage": "https://github.com/moog-stephen/node-red-contrib-moog",
   "node-red": {
     "nodes": {
       "sample": "moog/moog.js"
