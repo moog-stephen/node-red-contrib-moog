@@ -56,7 +56,16 @@
 <script type="text/x-red" data-help-name="moog">
     <p>A simple node that sends the message to Incident.MOOG</p>
     <p>Prefers an object called <code>moog</code> containing <code>moog.topic</code> and
-   <code>moog.description</code>.</p>
-   <p><code>msg.agent</code> is a <i>String</i>. Usualy node-red</p>
+    <code>moog.description</code>. is a <i>String</i>. A descripion of the event.</p>
+    <p><code>moog.agent</code> is a <i>String</i>. Usualy 'node-red'.</p>
+    <p><code>moog.severity</code> is a <i>Number</i>. 0-5 O=Clear, 5=Critical.</p>
+    <p><code>moog.location</code> is a <i>String</i>. Geography.</p>
+    <p><code>moog.class</code> is a <i>String</i>. Can be a category.</p>
+    <p><code>moog.type</code> is a <i>String</i>. Can be a sub-category.</p>
+    <p><code>moog.source</code> is a <i>String</i>. The Originating host or application.</p>
+    <p><code>moog.external_id</code> is a <i>String</i>. Unique id from the sending system.</p>
+    <p><code>moog.agent_time</code> is a <i>Number</i>. Epoch time in seconds from 1-1-1970.</p>
+    <p><code>moog.manager</code> is a <i>String</i>. Any intermediary or a person.</p>
+    <p><code>moog.custom_info</code> is a <i>String</i>. JSON encoded.</p>
 
 </script>
