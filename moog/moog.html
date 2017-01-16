@@ -1,0 +1,62 @@
+<script type="text/javascript">
+    RED.nodes.registerType('moog', {
+        category: 'output',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value: "moog"},
+            host: {value: "localhost", required: true},
+            port: {value: "8888"},
+            prot: {value: "http"},
+            secr: {value: "secret"}
+        },
+        inputs: 1,
+        outputs: 0,
+        label: function () {
+            return this.name || "moog";
+        },
+        align: 'right',
+        icon: "bridge-dash.png"
+    });
+</script>
+
+<script type="text/x-red" data-template-name="moog">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="moog">
+    </div>
+    <div class="form-row">
+        <label for="node-input-prot"><i class="fa fa-exchange"></i> Protocol</label>
+        <select type="select" id="node-input-prot">
+            <option value="http" selected>http</option>
+            <option value="https">https</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-host"><i class="fa fa-desktop"></i> Host</label>
+        <input type="text" id="node-input-host" placeholder="localhost">
+    </div>
+    <div class="form-row">
+        <label for="node-input-port"><i class="fa fa-plug"></i> Port</label>
+        <input type="number" id="node-input-port" min="1000" max="85536" placeholder="8888">
+    </div>
+    <div class="form-row">
+        <label for="node-input-secr"><i class="fa fa-user-secret"></i> Secret</label>
+        <input type="password" id="node-input-secr" placeholder="secret">
+    </div>
+    <div class="form-tips"><b>Name:</b> The name shown in the flow.
+     <b>Protocol</b> The Protocol to use, if https ensure the certificates are installed.
+     <b>Host</b> The host where the ReST endpoint is listening.
+     <b>Port</b> An optional endpoint port.
+     <b>Secret</b> An optional shared secret.</div>
+
+
+
+</script>
+
+<script type="text/x-red" data-help-name="moog">
+    <p>A simple node that sends the message to Incident.MOOG</p>
+    <p>Prefers an object called <code>moog</code> containing <code>moog.topic</code> and
+   <code>moog.description</code>.</p>
+   <p><code>msg.agent</code> is a <i>String</i>. Usualy node-red</p>
+
+</script>
