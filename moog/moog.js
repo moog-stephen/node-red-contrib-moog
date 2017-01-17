@@ -72,10 +72,10 @@ module.exports = function (RED) {
                 } else {
                     node.error('moogRest rtn - ' + rtn);
                     node.error('moogRest res - ' + res.statusCode + " "+res.statusMessage);
-                    node.error('Connection error for '+url)
+                    node.error('Connection error for '+url);
                     node.status({fill:"red",shape:"ring",text:"disconnected"});
                 }
-            })
+            });
 
         });
 
