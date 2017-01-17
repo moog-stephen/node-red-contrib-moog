@@ -4,9 +4,11 @@
         color: '#a6bbcf',
         defaults: {
             name: {value: "moog"},
-            host: {value: "localhost", required: true},
-            port: {value: "8888"},
             prot: {value: "http"},
+            host: {value: "localhost", required: true},
+            port: {value: ""},
+            user: {value: "user"},
+            pass: {value: "password", display: false},
             secr: {value: "secret"}
         },
         inputs: 1,
@@ -37,7 +39,15 @@
     </div>
     <div class="form-row">
         <label for="node-input-port"><i class="fa fa-plug"></i> Port</label>
-        <input type="number" id="node-input-port" min="1000" max="85536" placeholder="8888">
+        <input type="number" id="node-input-port" min="100" max="85536" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-user"><i class="fa fa-user"></i> User ID</label>
+        <input type="text" id="node-input-user" placeholder="username">
+    </div>
+    <div class="form-row">
+        <label for="node-input-pass"><i class="fa fa-user-circle"></i> Password</label>
+        <input type="password" id="node-input-pass" placeholder="">
     </div>
     <div class="form-row">
         <label for="node-input-secr"><i class="fa fa-user-secret"></i> Secret</label>

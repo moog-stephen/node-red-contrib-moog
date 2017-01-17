@@ -10,14 +10,30 @@ module.exports = function (RED) {
 
     function MoogNode(config) {
         RED.nodes.createNode(this, config);
+        this.prot = config.prot || "http";
         this.host = config.host;
         this.port = config.port;
-        this.prot = config.prot || "http";
+        this.user = config.user;
+        this.pass = config.pass;
         this.secr = config.secr;
         var node = this;
 
-        var url = node.prot+'://'+node.host+':'+node.port;
-        var moogRest = moog.moogREST({'url': url});
+        var url;
+        var moogRest;
+
+        if (this.port) {
+            url = node.prot+'://'+node.host+':'+node.port;
+        } else {
+            url = node.prot+'://'+node.host;
+        }
+
+        if (this.user && this.pass) {
+            moogRest = moog.moogREST({'url': url,'authUser': this.user, 'authPass': this.pass });
+        } else if (this.secr) {
+            moogRest = moog.moogREST({'url': url, 'auth_token': this.secr});
+        } else {
+            moogRest = moog.moogREST({'url': url});
+        }
 
         this.on('input', function process(msg) {
 
