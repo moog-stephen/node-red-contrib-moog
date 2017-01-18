@@ -4,12 +4,9 @@
         color: '#a6bbcf',
         defaults: {
             name: {value: "moog"},
-            prot: {value: "http"},
-            host: {value: "localhost", required: true},
-            port: {value: ""},
+            url: {value: "https://yourmoog", required: true, validate:RED.validators.regex(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g)},
             user: {value: "user"},
-            pass: {value: "password", display: false},
-            secr: {value: "secret"}
+            pass: {value: "password"}
         },
         inputs: 1,
         outputs: 0,
@@ -27,19 +24,8 @@
         <input type="text" id="node-input-name" placeholder="moog">
     </div>
     <div class="form-row">
-        <label for="node-input-prot"><i class="fa fa-exchange"></i> Protocol</label>
-        <select type="select" id="node-input-prot">
-            <option value="http" selected>http</option>
-            <option value="https">https</option>
-        </select>
-    </div>
-    <div class="form-row">
-        <label for="node-input-host"><i class="fa fa-desktop"></i> Host</label>
-        <input type="text" id="node-input-host" placeholder="localhost">
-    </div>
-    <div class="form-row">
-        <label for="node-input-port"><i class="fa fa-plug"></i> Port</label>
-        <input type="number" id="node-input-port" min="100" max="85536" placeholder="">
+        <label for="node-input-url"><i class="fa fa-exchange"></i> URL</label>
+        <input type="text" id="node-input-url">
     </div>
     <div class="form-row">
         <label for="node-input-user"><i class="fa fa-user"></i> User ID</label>
@@ -49,17 +35,11 @@
         <label for="node-input-pass"><i class="fa fa-user-circle"></i> Password</label>
         <input type="password" id="node-input-pass" placeholder="">
     </div>
-    <div class="form-row">
-        <label for="node-input-secr"><i class="fa fa-user-secret"></i> Secret</label>
-        <input type="password" id="node-input-secr" placeholder="secret">
-    </div>
     <div class="form-tips"><b>Name:</b> The name shown in the flow.
-     <b>Protocol</b> The Protocol to use, if https ensure the certificates are installed.
-     <b>Host</b> The host where the ReST endpoint is listening.
-     <b>Port</b> An optional endpoint port.
-     <b>Secret</b> An optional shared secret.</div>
-
-
+        <b>URL</b> The full URL for the endpoint, http or https.
+        <b>User</b> The username for the ReST.
+        <b>Password</b> The password for the user.
+    </div>
 
 </script>
 
