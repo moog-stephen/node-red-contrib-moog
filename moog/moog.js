@@ -14,21 +14,17 @@ module.exports = function (RED) {
         this.user = config.user;
         this.pass = config.pass;
         var node = this;
-
-        var url = this.url;
         var moogRest;
 
         if (this.user && this.pass) {
             moogRest = moog.moogREST({'url': this.url, 'authUser': this.user, 'authPass': this.pass});
-        } else if (this.secr) {
-            moogRest = moog.moogREST({'url': this.url, 'auth_token': this.secr});
         } else {
             moogRest = moog.moogREST({'url': this.url});
         }
 
         this.on('input', function process(msg) {
 
-            node.log('Connecting to ' + url);
+            node.log('Connecting to ' + node.url);
 
             var messageObj;
 
@@ -63,15 +59,15 @@ module.exports = function (RED) {
                 } else {
                     node.error('moogRest rtn - ' + rtn);
                     node.error('moogRest res - ' + res.statusCode + " " + res.statusMessage);
-                    node.error('Connection error for ' + url);
-                    node.status({fill: "red", shape: "ring", text: "disconnected"});
+                    node.error('Connection error for ' + node.url);
+                    node.status({fill: "red", shape: "ring", text: res.statusCode + " " + res.statusMessage});
                 }
             });
 
         });
 
         this.on('close', function () {
-            node.log('Disconnected from ' + url);
+            node.log('Disconnected from ' + node.url);
         });
     }
 

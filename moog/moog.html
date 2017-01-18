@@ -25,7 +25,7 @@
     </div>
     <div class="form-row">
         <label for="node-input-url"><i class="fa fa-exchange"></i> URL</label>
-        <input type="text" id="node-input-url">
+        <input type="text" id="node-input-url" placeholder="">
     </div>
     <div class="form-row">
         <label for="node-input-user"><i class="fa fa-user"></i> User ID</label>
@@ -45,8 +45,8 @@
 
 <script type="text/x-red" data-help-name="moog">
     <p>A simple node that sends the message to Incident.MOOG</p>
-    <p>Prefers an object called <code>moog</code> containing <code>moog.topic</code> and
-    <code>moog.description</code>. is a <i>String</i>. A descripion of the event.</p>
+    <p>Prefers an object called <code>moog</code></p>
+    <p><code>moog.description</code>. is a <i>String</i>. A descripion of the event.</p>
     <p><code>moog.agent</code> is a <i>String</i>. Usualy 'node-red'.</p>
     <p><code>moog.severity</code> is a <i>Number</i>. 0-5 0=Clear, 5=Critical.</p>
     <p><code>moog.location</code> is a <i>String</i>. Geography.</p>
