@@ -1,6 +1,6 @@
-![Moogsoft Logo](https://www.moogsoft.com/wp-content/uploads/2015/06/logo-moogsoft.png)
+![Moogsoft Logo](https://dan2ldrl04yqb.cloudfront.net/wp-content/uploads/2017/02/moog-logo.png?x18389)
 
-#node-red-contrib-moog
+# node-red-contrib-moog
 
 A node for Node-RED that will send output to Incident.MOOG.
 
@@ -10,7 +10,7 @@ Allows connecting to the Incident.MOOG REST LAM and sending events.
 - Provides for passing the shared secret
 - Provides specific port designation
 
-##Installation
+## Installation
 
 Install Node-RED first then
 ```
